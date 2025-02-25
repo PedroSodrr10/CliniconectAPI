@@ -1,6 +1,7 @@
 package com.Cliniconect.CliniconectAPI.service;
 
 import com.Cliniconect.CliniconectAPI.entities.Paciente;
+import com.Cliniconect.CliniconectAPI.entities.Profissional;
 import com.Cliniconect.CliniconectAPI.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
