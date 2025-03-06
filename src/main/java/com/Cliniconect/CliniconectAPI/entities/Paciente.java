@@ -23,6 +23,7 @@ public class Paciente implements Serializable {
     private String pacNome;
     private String pacEmail;
     private String pacMotivo;
+    private String pacTelefone;
 
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
