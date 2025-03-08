@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/agendamento")
+@RequestMapping(value = "/agendamento")
 public class ControllerAgendamento {
     @Autowired
     private AgendamentoService service;
@@ -34,7 +34,7 @@ public class ControllerAgendamento {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         try {
             service.delete(id);
@@ -44,7 +44,7 @@ public class ControllerAgendamento {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<?> getId(@PathVariable Long id) {
         try {
             return ResponseEntity.ok().body(service.getId(id));
@@ -53,10 +53,10 @@ public class ControllerAgendamento {
         }
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Agendamento agd) {
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Agendamento agend) {
         try {
-            return ResponseEntity.ok().body(service.update(id, agd));
+            return ResponseEntity.ok().body(service.update(id, agend));
         } catch (ResponseStatusException e) {
             return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
         }
